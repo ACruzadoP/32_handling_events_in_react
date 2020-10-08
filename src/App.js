@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function handleClick() {
+    console.log("I was clicked")
 }
 
-export default App;
+function handleClick2() {
+    console.log("Entering")
+}
+
+function handleClick3() {
+    console.log("Leaving")
+}
+
+// https://reactjs.org/docs/events.html#supported-events
+
+function App() {
+    return (
+        <div>
+            <img 
+                onMouseOver={() => console.log("Hovered!")} 
+                onMouseEnter={handleClick2} 
+                onMouseLeave={handleClick3} 
+                src="https://www.fillmurray.com/200/100"
+            />
+            <br />
+            <br />
+            <button onClick={handleClick}>Click me</button>
+        </div>
+    )
+}
+
+export default App
